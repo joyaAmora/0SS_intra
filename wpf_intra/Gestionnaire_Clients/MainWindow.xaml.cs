@@ -105,7 +105,7 @@ namespace Gestionnaire_Clients
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             SelectedClient = new Customer();
-            Customers.Add(selectedClient);
+            Customers.Add(selectedClient); 
         }
     }
 }
