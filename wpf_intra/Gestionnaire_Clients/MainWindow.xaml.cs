@@ -107,5 +107,10 @@ namespace Gestionnaire_Clients
             SelectedClient = new Customer();
             Customers.Add(selectedClient); 
         }
+
+        private void Button_Click_supprimer(object sender, RoutedEventArgs e)
+        {
+            Customers.Remove(SelectedClient);
+        }
     }
 }
