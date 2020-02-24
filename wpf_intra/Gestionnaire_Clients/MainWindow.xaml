@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Gestionnaire_Clients"
+        xmlns:other="clr-namespace:intra_models;assembly=intra_models"
         DataContext="{Binding RelativeSource={RelativeSource self}}"
         mc:Ignorable="d"
         Title="Gestion de clients" Height="450" Width="800">
@@ -25,8 +26,8 @@
                 </MenuItem>
             </Menu>
             <StatusBar DockPanel.Dock="Bottom">
-                <TextBlock Text="Produit sélectionné : "/>
-                <TextBlock Text="{Binding SelectedClient.FullName}"/>
+                <TextBlock Text="Client sélectionné : "/>
+                <TextBlock Text="{Binding SelectedClient.Info}"/>
             </StatusBar>
             <Grid Margin="5">
                 <Grid.ColumnDefinitions>
@@ -38,8 +39,12 @@
                         <RowDefinition Height="1*"/>
                         <RowDefinition Height="18*"/>
                     </Grid.RowDefinitions>
-                    <TextBlock Text="Liste des produits"/>
-                    <ListView Grid.Row="1" ItemsSource="{Binding Customers}" SelectedItem="{Binding SelectedClient}">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Liste des client"/>
+                        <Button Width="100" Margin="5 0">Nouveau Client</Button>
+                    </StackPanel>
+                    
+                    <ListView Grid.Row="1" ItemsSource="{Binding Customers}" SelectedItem="{Binding SelectedClient}" Name="listView">
                         <ListView.ItemTemplate >
                             <DataTemplate>
                                 <TextBlock Text="{Binding Info}"/>

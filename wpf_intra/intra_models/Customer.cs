@@ -6,6 +6,7 @@ namespace intra_models
 {
     public class Customer : INotifyPropertyChanged
     {
+        private string info;
         public string Name { get; set; }
         public string LastName { get; set; }
         public string Address { get; set; }
@@ -14,7 +15,10 @@ namespace intra_models
         public string PostalCode { get; set; }
         public string ContactInfo { get; set; }
         public string PicturePath { get; set; }
-        public string Info { get; set; }
+        public string Info
+        {
+            get => Name + " " + LastName;
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
