@@ -15,7 +15,7 @@
                     <MenuItem Header="Ouvrir"></MenuItem>
                     <MenuItem Header="Sauvegarder"></MenuItem>
                     <MenuItem Header="Fermer"></MenuItem>
-                    <MenuItem Header="Nouveau Client"></MenuItem>
+                    <MenuItem Header="Nouveau Client" Click="Button_Click"></MenuItem>
                     <MenuItem Header="Quitter"></MenuItem>
                 </MenuItem>
                 <MenuItem Header="_Edition">
@@ -41,7 +41,7 @@
                     </Grid.RowDefinitions>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="Liste des client"/>
-                        <Button Width="100" Margin="5 0">Nouveau Client</Button>
+                        <Button Width="100" Margin="5 0" Click="Button_Click">Nouveau Client</Button>
                     </StackPanel>
                     
                     <ListView Grid.Row="1" ItemsSource="{Binding Customers}" SelectedItem="{Binding SelectedClient}" Name="listView">

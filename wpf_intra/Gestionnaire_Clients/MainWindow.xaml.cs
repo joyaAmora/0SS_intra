@@ -101,5 +101,11 @@ namespace Gestionnaire_Clients
             ListView lv = (ListView)sender;
             SelectedClient = (Customer)lv.SelectedItem;
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            SelectedClient = new Customer();
+            Customers.Add(selectedClient);
+        }
     }
 }
